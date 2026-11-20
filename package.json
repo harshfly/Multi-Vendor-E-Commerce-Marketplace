@@ -1,0 +1,27 @@
+{
+  "name": "haat",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Haat - Multi-Vendor E-Commerce Marketplace",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "pnpm --parallel --filter api --filter web dev",
+    "dev:api": "pnpm --filter api dev",
+    "dev:web": "pnpm --filter web dev",
+    "build": "pnpm --filter shared build && pnpm --recursive build",
+    "test": "pnpm --recursive test",
+    "db:generate": "pnpm --filter api prisma:generate",
+    "db:migrate": "pnpm --filter api prisma:migrate",
+    "db:seed": "pnpm --filter api prisma:seed",
+    "db:setup": "pnpm --filter api prisma:setup",
+    "reindex": "pnpm --filter api reindex"
+  },
+  "packageManager": "pnpm@9.15.0",
+  "devDependencies": {
+    "typescript": "^5.7.2"
+  }
+}
+
